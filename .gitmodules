@@ -1,0 +1,3 @@
+[submodule "validate-jwt"]
+	path = validate-jwt
+	url = https://github.com/malla97/validate-jwt.git
