@@ -1,7 +1,7 @@
 # jwt-environment
 
 This repository contains
-1. the jwt validation API (jwt-validate). This is the same as [this repository](https://github.com/malla97/validate-jwt), but with the addition of trusting the localhost https server.
+1. the jwt validation API (jwt-validate). This is the same as [this repository's code](https://github.com/malla97/validate-jwt), but with the addition of trusting the localhost https server.
 2. self-sigend https server that can be used for local testing (cert-server)
 3. function generating a JWT (generate-jwt)
 
