@@ -1,0 +1,17 @@
+{
+  "name": "validate-jwt",
+  "version": "1.0.0",
+  "description": "This program is an API with a single endpoint. It validates JWT passed to it in the authorization headers and responses whether the JWT was valid or not. The response is in a JSON format. For example: {      \"valid\": true }",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "pem": "^1.14.8"
+  }
+}
