@@ -12,21 +12,27 @@ function fetchCertificate(url) {
     return new Promise((resolve, reject) => {
         https.get(url, httpsOptions, (res) => {
             let certData = '';
+
             res.on('data', (chunk) => {
                 certData += chunk;
             });
+
             res.on('end', () => {
-                // extract the public key from the certificate data
-                pem.getPublicKey(certData, (err, publicKey) => {
-                    if (err) {
-                        reject(err);
-                    } else {
-                        resolve(publicKey);
-                    }
-                });
+                extractPublicKey(certData).then(resolve).catch(reject);
             });
-        }).on('error', (err) => {
-            reject(err);
+
+        }).on('error', reject);
+    });
+}
+
+function extractPublicKey(certData) {
+    return new Promise((resolve, reject) => {
+        pem.getPublicKey(certData, (err, publicKey) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(publicKey);
+            }
         });
     });
 }
